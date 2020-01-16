@@ -65,5 +65,8 @@ target_link_libraries(editmodel ${Boost_SYSTEM_LIBRARY} ${CFITSIO_LIBRARY} ${CAS
 add_executable(cluster cluster.cpp nlplfitter.cpp model/model.cpp)
 target_link_libraries(cluster ${GSL_LIB} ${GSL_CBLAS_LIB})
 
+add_executable(render render.cpp image.cpp nlplfitter.cpp fftconvolver.cpp fftwmanager.cpp fitsiochecker.cpp fitsreader.cpp fitswriter.cpp model/model.cpp modelrenderer.cpp system.cpp wsclean/logger.cpp)
+target_link_libraries(render ${Boost_DATE_TIME_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${Boost_FILESYSTEM_LIBRARY} ${GSL_LIB} ${GSL_CBLAS_LIB} ${CFITSIO_LIBRARY} ${CASACORE_LIBRARIES} ${FFTW3_LIB} ${FFTW3_THREADS_LIB})
+
 message(STATUS "Flags passed to C++ compiler: " ${CMAKE_CXX_FLAGS})
 
